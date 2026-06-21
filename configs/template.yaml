@@ -1,0 +1,66 @@
+# Copy this file and edit values to create a new experiment.
+
+scenario:
+  name: my_new_scenario
+  random_seed: 0
+  output_dir: results/my_new_scenario
+
+users:
+  num_users: 100
+  distribution: uniform
+
+area:
+  x_min: 0
+  x_max: 1000
+  y_min: 0
+  y_max: 1000
+  dx: 200
+  dy: 200
+
+drones:
+  altitudes_m: [100]
+  cost_master: 40.0
+  cost_slave: 6.0
+
+environment:
+  # Suburban: alpha=0.11, beta=750, gamma=8, eta_los_db=0.1, eta_nlos_db=21.0
+  # Urban: alpha=0.3, beta=650, gamma=20, eta_los_db=1.0, eta_nlos_db=20.0
+  # Dense urban: alpha=0.5, beta=550, gamma=35, eta_los_db=1.6, eta_nlos_db=23.0
+  # High-rise urban: alpha=0.7, beta=450, gamma=50, eta_los_db=2.3, eta_nlos_db=34.0
+  name: suburban
+  alpha: 0.11
+  beta: 750
+  gamma: 8
+  eta_los_db: 0.1
+  eta_nlos_db: 21.0
+
+rf:
+  f_rf_hz: 2000000000.0
+  bandwidth_hz: 20000000.0
+  noise_figure_db: 7.0
+  tx_power_dbm: 20.0
+  tx_gain_dbi: 5.0
+  rx_gain_dbi: 0.0
+
+thz:
+  f_thz: 0.8
+  bandwidth_hz: 500000000.0
+  noise_figure_db: 10.0
+  model_type: agnostic
+  g2uav_coeff_file: data/coefficients/G2UAV_model_coefficients.mat
+  uav2uav_coeff_file: data/coefficients/UAV2UAV_model_coefficients.mat
+
+constraints:
+  Rmin: 2
+  SNR_A2G_RF_min: 5.0
+  SNR_A2G_THz_min: 5.0
+  SNR_A2A_RF_min: 5.0
+  SNR_A2A_THz_min: 5.0
+  pLoS_THz_min: 0.8
+
+solver:
+  time_limit_s: inf
+  mip_gap: 0.1
+
+outputs:
+  plot_filename: drone_deployment.pdf

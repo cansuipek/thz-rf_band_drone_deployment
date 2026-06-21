@@ -1,0 +1,64 @@
+# Default scenario.
+scenario:
+  name: dense_urban_50users_200_300m_rmin5
+  random_seed: 0
+  output_dir: results/dense_urban_50users_200_300m_rmin5
+
+users:
+  num_users: 50
+  distribution: uniform
+  # For clustered users, set distribution: clustered and adjust:
+  num_clusters: 5
+  cluster_std: 90
+
+area:
+  x_min: 0
+  x_max: 1000
+  y_min: 0
+  y_max: 1000
+  dx: 250
+  dy: 250
+
+drones:
+  altitudes_m: [200, 300]
+  cost_master: 40.0
+  cost_slave: 6.0
+
+environment:
+  name: dense_urban
+  alpha: 0.5
+  beta: 550
+  gamma: 35
+  eta_los_db: 1.6
+  eta_nlos_db: 23.0
+
+rf:
+  f_rf_hz: 2000000000.0
+  bandwidth_hz: 20000000.0
+  noise_figure_db: 7.0
+  tx_power_dbm: 20.0
+  tx_gain_dbi: 5.0
+  rx_gain_dbi: 0.0
+
+thz:
+  f_thz: 0.8
+  bandwidth_hz: 500000000.0
+  noise_figure_db: 10.0
+  model_type: agnostic
+  g2uav_coeff_file: data/coefficients/G2UAV_model_coefficients.mat
+  uav2uav_coeff_file: data/coefficients/UAV2UAV_model_coefficients.mat
+
+constraints:
+  Rmin: 5
+  SNR_A2G_RF_min: 5.0
+  SNR_A2G_THz_min: 5.0
+  SNR_A2A_RF_min: 5.0
+  SNR_A2A_THz_min: 5.0
+  pLoS_THz_min: 0.8
+
+solver:
+  time_limit_s: inf
+  mip_gap: 0.1
+
+outputs:
+  plot_filename: drone_deployment.pdf
