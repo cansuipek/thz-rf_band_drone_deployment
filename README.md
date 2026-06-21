@@ -34,7 +34,8 @@ This repository contains the ENS 492 graduation project optimization code for dr
 
 ## Running the default scenario
 To run the project, Gurobi license is required. 
-From the repository:
+
+Default scenario can be run with the following command:
 ```bash
 python src/run_scenario.py --config configs/dense_urban_50users_90_100m_rmin5.yaml
 ```
