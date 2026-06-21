@@ -1,6 +1,6 @@
 # Joint Optimization of Drone Deployment and THz/RF Band Selection
 
-This repository contains the Python version of the ENS 492 graduation project optimization code for UAV/drone deployment with RF and THz communication links.
+This repository contains the ENS 492 graduation project optimization code for drone deployment with RF and THz communication links.
 
 
 ## Repository structure
@@ -25,8 +25,7 @@ This repository contains the Python version of the ENS 492 graduation project op
 ├── notebook/
 ```
 
-## Main files
-
+## Files
 - `src/channel_models.py`: LoS probability, RF path loss, THz path loss, SNR, and data-rate functions.
 - `src/scenario_builder.py`: Creates users, candidate drone locations, A2G/A2A link tables, and the `data` dictionary.
 - `src/optimization_model.py`: Gurobi model, decision variables, objective, and constraints.
@@ -34,15 +33,14 @@ This repository contains the Python version of the ENS 492 graduation project op
 - `src/run_scenario.py`: Main command-line runner.
 
 ## Running the default scenario
-From the repository root:
-
+To run the project, Gurobi license is required. 
+From the repository:
 ```bash
 python src/run_scenario.py --config configs/dense_urban_50users_90_100m_rmin5.yaml
 ```
-To be able to run the project, Gurobi license is required. 
 
 The default config values:
-- 10 users
+- 50 users
 - dense urban environment
 - altitudes `[200, 300]` m
 - 250 m candidate grid spacing
@@ -57,14 +55,12 @@ results/dense_urban_50users_90_100m_rmin5/
 ```
 
 ## Running without plotting
-
 ```bash
 python src/run_scenario.py --config configs/dense_urban_50users_90_100m_rmin5.yaml --no-plot
 ```
 
 ## Creating a new scenario
 Copy the template in configs/template_edit_me.yaml configs/my_scenario.yaml, edit the values and run python src/run_scenario.py --config configs/my_scenario.yaml command.
-
 
 ## Jupyter notebook
 The original jupyter notebook is in:
