@@ -1,6 +1,6 @@
 # Joint Optimization of Drone Deployment and THz/RF Band Selection
 
-This repository contains the ENS 492 graduation project optimization code for drone deployment with RF and THz communication links.
+This repository contains the ENS 492 graduation project optimization code for drone deployment with RF and THz communication links and a simple demo.
 
 
 ## Repository structure
