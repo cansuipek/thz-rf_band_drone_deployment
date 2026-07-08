@@ -1,6 +1,6 @@
 """
 Command-line runner for one configured UAV RF/THz deployment scenario.
-python src/run_scenario.py --config configs/dense_urban_50users_90_100m_rmin5.yaml
+python src/run_scenario.py --config configs/dense_urban_50users_200_300m_rmin5.yaml
 """
 
 from __future__ import annotations
@@ -55,7 +55,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--config",
-        default="configs/dense_urban_50users_90_100m_rmin5.yaml",
+        default="configs/dense_urban_50users_200_300m_rmin5.yaml",
         help="Path to a YAML scenario config file.",
     )
     parser.add_argument(
