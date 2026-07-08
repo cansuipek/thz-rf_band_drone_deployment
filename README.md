@@ -8,7 +8,7 @@ This repository contains the ENS 492 graduation project optimization code for dr
 ```text
 .
 ├── configs/
-│   └──  dense_urban_50users_90_100m_rmin5.yaml
+│   └──  dense_urban_50users_200_300m_rmin5.yaml
 │   
 ├── data/
 │   └── coefficients/
@@ -37,7 +37,7 @@ Note: To run the project, Gurobi license is required.
 
 Default scenario can be run with the following command:
 ```bash
-python src/run_scenario.py --config configs/dense_urban_50users_90_100m_rmin5.yaml
+python src/run_scenario.py --config configs/dense_urban_50users_200_300m_rmin5.yaml
 ```
 
 The default config values:
@@ -52,12 +52,12 @@ The default config values:
 
 Outputs are written to the following path:
 ```text
-results/dense_urban_50users_90_100m_rmin5/
+results/dense_urban_50users_200_300m_rmin5/
 ```
 
 ## Running without plotting
 ```bash
-python src/run_scenario.py --config configs/dense_urban_50users_90_100m_rmin5.yaml --no-plot
+python src/run_scenario.py --config configs/dense_urban_50users_200_300m_rmin5.yaml --no-plot
 ```
 
 ## Creating a new scenario
