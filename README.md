@@ -27,7 +27,7 @@ This repository contains the ENS 492 graduation project optimization code for dr
 
 ## Files
 - `src/channel_models.py`: LoS probability, RF path loss, THz path loss, SNR, and data-rate functions.
-- `src/scenario_builder.py`: Creates users, candidate drone locations, A2G/A2A link tables, and the `data` dictionary.
+- `src/scenario_builder.py`: Creates users, candidate drone locations, candidate A2G/A2A links, and the `data` dictionary.
 - `src/optimization_model.py`: Gurobi model, decision variables, objective, and constraints.
 - `src/visualization.py`: Link-performance prints and 3D deployment figure.
 - `src/run_scenario.py`: Main command runner.
